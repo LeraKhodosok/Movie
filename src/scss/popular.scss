@@ -1,0 +1,86 @@
+@import "mixins";
+
+.popular {
+  background: #211f1f;
+  padding: 100px 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popular_block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .popular_title {
+    @include font_style(35px, #ffffff);
+  }
+}
+
+.popular-slider {
+  .film-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .film_info {
+    width: 100%;
+    background-color: #2b2929;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-bottom: 30px;
+  }
+
+  .film_name {
+    @include font_style(35px, #ffffff);
+  }
+
+  .more {
+    background: transparent;
+    border-style: none;
+    @include font_text(25px, #808080);
+    width: 90px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:hover {
+      color: #ffffff;
+    }
+  }
+
+  .popular_btn_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    float: right;
+
+    .previous {
+      background-color: transparent;
+      border: 2px #808080 solid;
+      border-right: 1px #808080 solid;
+      width: 55px;
+      height: 55px;
+    }
+
+    .next {
+      background-color: transparent;
+      border: 2px #808080 solid;
+      border-left: 1px #808080 solid;
+      width: 55px;
+      height: 55px;
+    }
+  }
+}
+
+.picture {
+  width: 100%;
+}

@@ -1,0 +1,11 @@
+@mixin font_style ($fz, $clr) {
+  font-family: "Roboto", sans-serif;
+  color: $clr;
+  font-size: $fz;
+}
+
+@mixin font_text ($fz, $clr) {
+  font-family: "Roboto Text", sans-serif;
+  color: $clr;
+  font-size: $fz;
+}
