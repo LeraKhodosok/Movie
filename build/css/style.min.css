@@ -143,7 +143,7 @@ header {
   padding: 20px 0;
 }
 
-.popular {
+.movie_container {
   background: #211f1f;
   padding: 100px 0;
   display: flex;
@@ -151,23 +151,23 @@ header {
   align-items: center;
 }
 
-.popular_block {
+.movie_block {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.popular_block .popular_title {
+.movie_block .movie_title {
   font-family: "Roboto", sans-serif;
   color: #ffffff;
   font-size: 35px;
 }
 
-.popular-slider .film-slide {
+.movie-slider .film-slide {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.popular-slider .film_info {
+.movie-slider .film_info {
   width: 100%;
   background-color: #2b2929;
   display: flex;
@@ -175,12 +175,12 @@ header {
   align-items: center;
   padding-bottom: 30px;
 }
-.popular-slider .film_name {
+.movie-slider .film_name {
   font-family: "Roboto", sans-serif;
   color: #ffffff;
   font-size: 35px;
 }
-.popular-slider .more {
+.movie-slider .more {
   background: transparent;
   border-style: none;
   font-family: "Roboto Text", sans-serif;
@@ -191,23 +191,23 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-.popular-slider .more:hover {
+.movie-slider .more:hover {
   color: #ffffff;
 }
-.popular-slider .popular_btn_container {
+.movie-slider .movie_btn_container {
   display: flex;
   justify-content: center;
   align-items: center;
   float: right;
 }
-.popular-slider .popular_btn_container .previous {
+.movie-slider .movie_btn_container .previous {
   background-color: transparent;
   border: 2px #808080 solid;
   border-right: 1px #808080 solid;
   width: 55px;
   height: 55px;
 }
-.popular-slider .popular_btn_container .next {
+.movie-slider .movie_btn_container .next {
   background-color: transparent;
   border: 2px #808080 solid;
   border-left: 1px #808080 solid;

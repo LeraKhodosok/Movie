@@ -1,6 +1,6 @@
 @import "mixins";
 
-.popular {
+.movie_container {
   background: #211f1f;
   padding: 100px 0;
 
@@ -9,17 +9,17 @@
   align-items: center;
 }
 
-.popular_block {
+.movie_block {
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  .popular_title {
+  .movie_title {
     @include font_style(35px, #ffffff);
   }
 }
 
-.popular-slider {
+.movie-slider {
   .film-slide {
     display: flex;
     flex-direction: column;
@@ -56,7 +56,7 @@
     }
   }
 
-  .popular_btn_container {
+  .movie_btn_container {
     display: flex;
     justify-content: center;
     align-items: center;
