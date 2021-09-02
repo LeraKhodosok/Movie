@@ -533,7 +533,7 @@ progress {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 80px;
+  width: 150px;
 }
 .main .main_info {
   padding-top: 500px;
