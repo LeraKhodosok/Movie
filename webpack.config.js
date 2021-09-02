@@ -1,11 +1,10 @@
 'use strict';
 const path = require('path');
-//const webpack = require('webpack');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: ['babel-polyfill', './src/index.js'],
   output: {
     path: path.resolve(__dirname, './build/'),
     filename: 'js/[name].min.js'
@@ -19,9 +18,6 @@ module.exports = {
         include: path.resolve(__dirname, 'src/js'),
         use: {
           loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env']
-          }
         }
       },
       {
