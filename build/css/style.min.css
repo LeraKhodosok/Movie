@@ -579,25 +579,38 @@ header {
   font-size: 35px;
 }
 
-.movie-slider .film-slide {
+.film-slide {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 10px 0;
+  margin-right: 20px;
+  min-width: 300px;
 }
-.movie-slider .film_info {
+.film-slide:last-child {
+  margin-right: 0;
+}
+
+.film_info {
   width: 100%;
+  height: 200px;
   background-color: #2b2929;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   padding-bottom: 30px;
+  padding-top: 30px;
 }
-.movie-slider .film_name {
+
+.film_name {
   font-family: "Roboto", sans-serif;
   color: #ffffff;
-  font-size: 35px;
+  font-size: 30px;
+  text-align: center;
 }
-.movie-slider .more {
+
+.more {
   background: transparent;
   border-style: none;
   font-family: "Roboto Text", sans-serif;
@@ -608,23 +621,24 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-.movie-slider .more:hover {
+.more:hover {
   color: #ffffff;
 }
-.movie-slider .movie_btn_container {
+
+.movie_btn_container {
   display: flex;
   justify-content: center;
   align-items: center;
   float: right;
 }
-.movie-slider .movie_btn_container .previous {
+.movie_btn_container .previous {
   background-color: transparent;
   border: 2px #808080 solid;
   border-right: 1px #808080 solid;
   width: 55px;
   height: 55px;
 }
-.movie-slider .movie_btn_container .next {
+.movie_btn_container .next {
   background-color: transparent;
   border: 2px #808080 solid;
   border-left: 1px #808080 solid;
@@ -634,6 +648,13 @@ header {
 
 .picture {
   width: 100%;
+}
+
+.item_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow-x: auto;
 }
 
 @font-face {

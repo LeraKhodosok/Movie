@@ -16,4 +16,11 @@ export default class MovieAPI {
     const response = await this.getResource('popular');
     return response.results;
   };
+
+  getLatestMovies = async () =>  await this.getResource('latest');
+
+  getPremiereMovies = async () => {
+    const response = await this.getResource('upcoming');
+    return response.results;
+  };
 }
