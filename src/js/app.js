@@ -2,9 +2,17 @@ import MovieAPI from './api';
 
 const movieAPI = new MovieAPI();
 
-let itemContainer = document.querySelector('.item_container');
+let popularContainer = document.querySelector('.popular .item_container');
+let premiereContainer = document.querySelector('.premiere .item_container');
+let newContainer = document.querySelector('.premiere .item_container');
 
-function addItems(name, img) {
+function newMovie() {
+    let bgr = document.querySelector('.main');
+   bgr.setAttribute('background', 'scr');
+   bgr.style.background = 'https://image.tmdb.org/t/p/original/zvpR6rIS5Mjkg2ryuIkFfuiN1s5.jpg';
+}
+
+function addItems(name, img, container) {
     let movieItem = document.createElement('div');
     movieItem.classList.add('film-slide');
 
@@ -35,14 +43,14 @@ function addItems(name, img) {
     movieItem.appendChild(picture);
     movieItem.appendChild(filmInfo);
 
-    itemContainer.appendChild(movieItem);
+    container.appendChild(movieItem);
 }
 
 movieAPI.getPopularMovies()
   .then((res) => {
     console.log(res)
       res.forEach((item) => {
-          addItems(item.original_title, item.poster_path);
+          addItems(item.original_title, item.poster_path, popularContainer);
       })
   })
   .catch((err) => {
@@ -52,9 +60,6 @@ movieAPI.getPopularMovies()
 movieAPI.getLatestMovies()
     .then((res) => {
         console.log(res)
-        res.forEach((item) => {
-            addItems(item.original_title, item.poster_path);
-        })
     })
     .catch((err) => {
         console.log(err)
@@ -65,7 +70,7 @@ movieAPI.getPremiereMovies()
     .then((res) => {
         console.log(res)
         res.forEach((item) => {
-            addItems(item.original_title, item.poster_path);
+            addItems(item.original_title, item.poster_path, premiereContainer);
         })
     })
     .catch((err) => {
