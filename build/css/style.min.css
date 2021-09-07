@@ -476,7 +476,7 @@ progress {
 .main {
   background: linear-gradient(0deg, #211f1f 4.66%, rgba(0, 0, 0, 0) 76.78%);
   background-size: cover;
-  height: 100vh;
+  height: 100%;
   padding-bottom: 150px;
 }
 .main .btns_container {
@@ -537,6 +537,10 @@ progress {
 }
 .main .main_info {
   padding-top: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .main .main_info .main_title {
   font-family: "Roboto", sans-serif;
@@ -672,6 +676,53 @@ header {
   font-weight: 100;
   font-style: normal;
   font-display: swap;
+}
+.popup {
+  display: none;
+}
+
+.popup.active {
+  display: block;
+  position: fixed;
+  top: 10%;
+  left: 35%;
+  background: #211f1f;
+  width: 700px;
+  height: 900px;
+}
+
+.popup_title {
+  font-family: "Roboto", sans-serif;
+  color: 46px;
+  font-size: 75px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.popup_text {
+  font-family: "Roboto Text", sans-serif;
+  color: 26px;
+  font-size: 25px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.close_container {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px 30px;
+}
+
+.fa.fa-window-close-o {
+  font-size: 50px;
+  color: #ffffff;
+}
+
+.popup_info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=style.min.css.map*/

@@ -17,7 +17,7 @@ export default class MovieAPI {
     return response.results;
   };
 
-  getLatestMovies = async () =>  await this.getResource('latest');
+  getLatestMovie = async () =>  await this.getResource('latest');
 
   getPremiereMovies = async () => {
     const response = await this.getResource('upcoming');

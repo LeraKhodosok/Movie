@@ -1,0 +1,49 @@
+@import "mixins";
+
+.popup {
+  display: none;
+}
+
+.popup.active {
+  display: block;
+
+  position: fixed;
+  top: 10%;
+  left: 35%;
+
+  background: #211f1f;
+
+  width: 700px;
+  height: 900px;
+}
+
+.popup_title {
+  @include font_style(75px, 46px);
+  text-align: center;
+  color: #ffffff;
+}
+
+.popup_text {
+  @include font_text(25px, 26px);
+  text-align: center;
+  color: #ffffff;
+}
+
+.close_container {
+  display: flex;
+  justify-content: flex-end;
+
+  margin: 20px 30px;
+}
+
+.fa.fa-window-close-o {
+  font-size: 50px;
+  color: #ffffff;
+}
+
+.popup_info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
