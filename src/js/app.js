@@ -96,9 +96,7 @@ movieAPI.getLatestMovie()
     .then((res) => {
         console.log(res);
         !!(res.poster_path) ? newMovie(res.title, res.overview, res.poster_path) : defImg();
-        if (res.adult == true) {
-            defImg();
-        }
+        !(res.adult) ? defImg() : newMovie(res.title, res.overview, res.poster_path);
     })
     .catch((err) => {
         console.log(err)
