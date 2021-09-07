@@ -39,9 +39,8 @@ function addItems(name, img, container, id) {
     picture.classList.add('picture');
 
     let filmImg = document.createElement('img');
+    filmImg.classList.add('movie_img');
     filmImg.src = `${baseImgPath}${img}`;
-    filmImg.setAttribute('width', '100%');
-    filmImg.setAttribute('height', '400px');
 
     let filmInfo = document.createElement('div');
     filmInfo.classList.add('film_info');
@@ -72,8 +71,7 @@ function popupBlocks(title, overview, url, id) {
     popupTitle.innerText = title;
     popupText.innerText = overview;
     popupImg.src = `${baseImgPath}${url}`;
-    popupImg.setAttribute('width', '100%');
-    popupImg.setAttribute('height', '600px');
+    popupImg.classList.add('popup_img');
     popup.id = id;
 }
 
@@ -96,7 +94,11 @@ movieAPI.getPopularMovies()
 
 movieAPI.getLatestMovie()
     .then((res) => {
+        console.log(res);
         !!(res.poster_path) ? newMovie(res.title, res.overview, res.poster_path) : defImg();
+        if (res.adult == true) {
+            defImg();
+        }
     })
     .catch((err) => {
         console.log(err)

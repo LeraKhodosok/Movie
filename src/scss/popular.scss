@@ -53,6 +53,7 @@
   .film_name {
     @include font_style(30px, #ffffff);
     text-align: center;
+    padding: 0 10px 0;
   }
 
   .more {
@@ -104,4 +105,9 @@
   align-items: center;
 
   overflow-x: auto;
+}
+
+.movie_img {
+  width: 100%;
+  height: 400px;
 }
