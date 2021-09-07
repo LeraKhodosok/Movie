@@ -23,4 +23,6 @@ export default class MovieAPI {
     const response = await this.getResource('upcoming');
     return response.results;
   };
+
+  getMovieInfo = async (id) =>  await this.getResource(id);
 }

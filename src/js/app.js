@@ -5,14 +5,18 @@ const movieAPI = new MovieAPI();
 const popularContainer = document.querySelector('.popular .item_container');
 const premiereContainer = document.querySelector('.premiere .item_container');
 const newContainer = document.querySelector('.premiere .item_container');
+
 const main = document.querySelector('.main');
 const mainTitle = document.querySelector('.main .main_title');
 const mainText = document.querySelector('.main .main_text');
+
 const popup = document.querySelector('.popup');
 const close = document.querySelector('.fa.fa-window-close-o');
 const popupTitle = document.querySelector('.popup_title');
 const popupText = document.querySelector('.popup_text');
 const popupImg = document.querySelector('.popup_img');
+
+const moviesContainers = document.querySelectorAll('.movie_container');
 
 const baseImgPath = 'https://image.tmdb.org/t/p/original';
 
@@ -75,7 +79,6 @@ function popupBlocks(title, overview, url, id) {
 
 movieAPI.getPopularMovies()
   .then((res) => {
-    console.log(res)
       res.forEach((item) => {
           addItems(item.original_title, item.poster_path, popularContainer, item.id);
           document.addEventListener('click', (e) => {
@@ -93,8 +96,6 @@ movieAPI.getPopularMovies()
 
 movieAPI.getLatestMovie()
     .then((res) => {
-        console.log(res);
-        console.log(res.poster_path);
         !!(res.poster_path) ? newMovie(res.title, res.overview, res.poster_path) : defImg();
     })
     .catch((err) => {
@@ -104,16 +105,8 @@ movieAPI.getLatestMovie()
 
 movieAPI.getPremiereMovies()
     .then((res) => {
-        console.log(res);
         res.forEach((item) => {
             addItems(item.original_title, item.poster_path, premiereContainer, item.id);
-            document.addEventListener('click', (e) => {
-                let click = e.target;
-                if (checkParent(click, '.more')){
-                    popup.classList.add('active');
-                }
-            })
-            popupBlocks(item.original_title, item.overview, item.poster_path, item.id);
         })
     })
     .catch((err) => {
@@ -122,4 +115,20 @@ movieAPI.getPremiereMovies()
 
 close.addEventListener('click', () => {
     popup.classList.remove('active');
+})
+
+moviesContainers.forEach((item) => {
+    item.addEventListener('click', (e) => {
+        if (checkParent(e.target, '.film-slide') && e.target.classList.contains('more')) {
+            let idToShow = e.target.parentElement.parentElement.id;
+            popup.classList.add('active');
+            movieAPI.getMovieInfo(idToShow)
+              .then((res) => {
+                  popupBlocks(res.original_title, res.overview, res.poster_path, res.id);
+              })
+              .catch((err) => {
+                  console.log(err);
+              })
+        }
+    })
 })
