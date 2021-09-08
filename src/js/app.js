@@ -94,8 +94,9 @@ movieAPI.getPopularMovies()
 
 movieAPI.getLatestMovie()
     .then((res) => {
+        console.log(res);
+        !!(res.adult) ? defImg() : newMovie(res.title, res.overview, res.poster_path);
         !!(res.poster_path) ? newMovie(res.title, res.overview, res.poster_path) : defImg();
-        !(res.adult) ? defImg() : newMovie(res.title, res.overview, res.poster_path);
     })
     .catch((err) => {
         console.log(err)
