@@ -4,7 +4,6 @@ const movieAPI = new MovieAPI();
 
 const popularContainer = document.querySelector('.popular .item_container');
 const premiereContainer = document.querySelector('.premiere .item_container');
-const newContainer = document.querySelector('.premiere .item_container');
 
 const main = document.querySelector('.main');
 const mainTitle = document.querySelector('.main .main_title');
@@ -20,36 +19,35 @@ const moviesContainers = document.querySelectorAll('.movie_container');
 
 const baseImgPath = 'https://image.tmdb.org/t/p/original';
 
-function newMovie(title, overview, url) {
-    main.style.backgroundImage = `url(${baseImgPath}${url})`;
+function newMovie(title, overview) {
     mainTitle.innerText = title;
     mainText.innerText = overview;
 }
 
 function defImg() {
-    main.style.backgroundImage = `url(./src/img/main.png)`;
+    main.style.backgroundImage = `url(./src/img/afisha.jpg)`;
 }
 
 function addItems(name, img, container, id) {
-    let movieItem = document.createElement('div');
+    const movieItem = document.createElement('div');
     movieItem.classList.add('film-slide');
     movieItem.id = id;
 
-    let picture = document.createElement('div');
+    const picture = document.createElement('div');
     picture.classList.add('picture');
 
-    let filmImg = document.createElement('img');
+    const filmImg = document.createElement('img');
     filmImg.classList.add('movie_img');
     filmImg.src = `${baseImgPath}${img}`;
 
-    let filmInfo = document.createElement('div');
+    const filmInfo = document.createElement('div');
     filmInfo.classList.add('film_info');
 
-    let filmName = document.createElement('h3');
+    const filmName = document.createElement('h3');
     filmName.classList.add('film_name');
     filmName.innerText = name;
 
-    let moreBtn = document.createElement('button');
+    const moreBtn = document.createElement('button');
     moreBtn.classList.add('more');
     moreBtn.textContent = 'more';
 
@@ -94,9 +92,8 @@ movieAPI.getPopularMovies()
 
 movieAPI.getLatestMovie()
     .then((res) => {
-        console.log(res);
-        !!(res.adult) ? defImg() : newMovie(res.title, res.overview, res.poster_path);
-        !!(res.poster_path) ? newMovie(res.title, res.overview, res.poster_path) : defImg();
+        newMovie(res.title, res.overview);
+        defImg();
     })
     .catch((err) => {
         console.log(err)

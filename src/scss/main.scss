@@ -5,10 +5,37 @@
 @import "~bootstrap/scss/_containers.scss";
 @import "~bootstrap/scss/reboot";
 
+@import "mixins";
 @import "header";
 @import "popular";
 @import "new";
 @import "premiere";
-@import "mixins";
 @import "fonts";
 @import "popup";
+
+.container {
+
+  @media (max-width: 1200px) {
+    max-width: 1000px;
+  }
+
+  @media (max-width: 992px) {
+    max-width: 750px;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 570px;
+  }
+
+  @media (max-width: 576px) {
+    max-width: 470px;
+  }
+
+  @media (max-width: 480px) {
+    max-width: 400px;
+  }
+
+  @media (max-width: 340px) {
+    max-width: 320px;
+  }
+}
