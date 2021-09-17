@@ -9,7 +9,7 @@ const main = document.querySelector('.main');
 const mainTitle = document.querySelector('.main .main_title');
 const mainText = document.querySelector('.main .main_text');
 
-const popup = document.querySelector('.popup');
+const popup = document.querySelector('.popup_bg');
 const close = document.querySelector('.fa.fa-window-close-o');
 const popupTitle = document.querySelector('.popup_title');
 const popupText = document.querySelector('.popup_text');
@@ -77,13 +77,6 @@ movieAPI.getPopularMovies()
   .then((res) => {
       res.forEach((item) => {
           addItems(item.original_title, item.poster_path, popularContainer, item.id);
-          document.addEventListener('click', (e) => {
-              let click = e.target;
-              if (checkParent(click, '.more')){
-                  popup.classList.add('active');
-              }
-          })
-          popupBlocks(item.original_title, item.overview, item.poster_path, item.id);
       })
   })
   .catch((err) => {
@@ -93,7 +86,6 @@ movieAPI.getPopularMovies()
 movieAPI.getLatestMovie()
     .then((res) => {
         newMovie(res.title, res.overview);
-        defImg();
     })
     .catch((err) => {
         console.log(err)

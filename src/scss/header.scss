@@ -1,8 +1,8 @@
 .main {
-  background: linear-gradient(0deg, #211f1f 4.66%, rgba(0, 0, 0, 0) 76.78%);
   background-size: cover;
   height: 100%;
   padding-bottom: 150px;
+  background: linear-gradient(0deg, #000000 4.66%, rgba(0, 0, 0, 0) 76.78%), url(../img/afisha.jpg);
 
   .btns_container {
     display: flex;
@@ -15,7 +15,7 @@
     justify-content: start;
     align-items: center;
 
-    @media (max-width: 992px) {
+    @media (max-width: 768px) {
       display: none;
     }
 
@@ -31,10 +31,6 @@
       &:hover {
         font-size: 35px;
       }
-
-      @media (max-width: 1200px) {
-        font-size: 20px;
-      }
     }
 
     .movies {
@@ -49,17 +45,13 @@
       &:hover {
         font-size: 35px;
       }
-
-      @media (max-width: 1200px) {
-        font-size: 20px;
-      }
     }
   }
 
   .search_input {
     background: #808080;
     opacity: 0.5;
-    height: 60px;
+    height: 40px;
     width: 700px;
     padding: 0 30px;
 
@@ -69,11 +61,11 @@
     }
 
     @media (max-width: 992px) {
-      width: 400px;
+      width: 450px;
     }
 
     @media (max-width: 768px) {
-      width: 450px;
+      width: 400px;
     }
 
     @media (max-width: 576px) {
@@ -93,19 +85,11 @@
 
     &::placeholder{
       color: #ffffff;
-      text-align: center;
+      text-align: left;
       font-size: 20px;
 
-      @media (max-width: 1200px) {
-        font-size: 16px;
-      }
-
       @media (max-width: 992px) {
-        font-size: 12px;
-      }
-
-      @media (max-width: 576px) {
-        font-size: 10px;
+        font-size: 14px;
       }
     }
 
@@ -144,24 +128,15 @@
       @include font_style (105px, #ffffff);
       text-align: center;
       color: #ffffff;
-      margin-bottom: 200px;
+      margin-bottom: 150px;
 
       @media (max-width: 1200px) {
         @include font_style (85px, #ffffff);
         margin-bottom: 100px;
       }
 
-      @media (max-width: 992px) {
-        @include font_style (75px, #ffffff);
-      }
-
       @media (max-width: 768px) {
         @include font_style (60px, #ffffff);
-      }
-
-      @media (max-width: 576px) {
-        @include font_style (50px, #ffffff);
-        margin-bottom: 70px;
       }
 
       @media (max-width: 480px) {
@@ -171,7 +146,7 @@
     }
 
     .main_title {
-     @include font_style (65px, #ffffff);
+     @include font_style (55px, #ffffff);
       text-align: center;
       color: #ffffff;
 
@@ -179,16 +154,8 @@
         @include font_style (45px, #ffffff);
       }
 
-      @media (max-width: 992px) {
-        @include font_style (35px, #ffffff);
-      }
-
       @media (max-width: 768px) {
         @include font_style (30px, #ffffff);
-      }
-
-      @media (max-width: 576px) {
-        @include font_style (25px, #ffffff);
       }
     }
 
@@ -201,16 +168,8 @@
         @include font_text (25px, #ffffff);
       }
 
-      @media (max-width: 992px) {
-        @include font_text (20px, #ffffff);
-      }
-
       @media (max-width: 768px) {
         @include font_text (18px, #ffffff);
-      }
-
-      @media (max-width: 576px) {
-        @include font_text (16px, #ffffff);
       }
     }
   }

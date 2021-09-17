@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,64 +8,70 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./build/css/style.min.css">
 </head>
+
 <body>
-<div class="main">
-    <div class="container">
-        <header>
-            <div class="btns_container">
-                <i class="fa fa-bars" style="color: #ffffff; font-size: 20px;" ></i>
-                <div class="main_btn_container">
-                    <button class="play">Play</button>
-                    <button class="movies">Movies</button>
+    <div class="main">
+        <div class="container">
+            <header>
+                <div class="btns_container">
+                    <i class="fa fa-bars" style="color: #ffffff; font-size: 20px;"></i>
+                    <div class="main_btn_container">
+                        <button class="play">Play</button>
+                        <button class="movies">Movies</button>
+                    </div>
+                </div>
+                <form class="search">
+                    <input class="search_input" placeholder="Search anything" type="search">
+                </form>
+                <div class="main_icons_container">
+                    <i style="color: #ffffff; font-size: 20px;" class="fa fa-th"></i>
+                    <i style="color: #ffffff; font-size: 20px;" class="fa fa-bell-o"></i>
+                    <i style="color: #ffffff; font-size: 20px;" class="fa fa-user"></i>
+                </div>
+            </header>
+            <div class="main_info">
+                <h1 class="main_new_movie">New Movie</h1>
+                <h2 class="main_title"></h2>
+                <p class="main_text"></p>
+            </div>
+        </div>
+    </div>
+    <div class="movie_container popular">
+        <div class="container">
+            <div class="movie_block">
+                <div class="movie_info">
+                    <h2 class="movie_title">Popular movies</h2>
                 </div>
             </div>
-            <form class="search">
-                <input class="search_input" placeholder="Search anything" type="search">
-            </form>
-            <div class="main_icons_container">
-                <i style="color: #ffffff; font-size: 20px;" class="fa fa-th"></i>
-                <i style="color: #ffffff; font-size: 20px;" class="fa fa-bell-o"></i>
-                <i style="color: #ffffff; font-size: 20px;" class="fa fa-user"></i>
-            </div>
-        </header>
-        <div class="main_info">
-            <h1 class="main_new_movie">New Movie</h1>
-            <h2 class="main_title"></h2>
-            <p class="main_text"></p>
+            <div class="item_container"></div>
         </div>
     </div>
-</div>
-<div class="movie_container popular">
-    <div class="container">
-        <div class="movie_block">
-            <div class="movie_info">
-                <h2 class="movie_title">Popular movies</h2>
+    <div class="movie_container premiere">
+        <div class="container">
+            <div class="movie_block">
+                <div class="movie_info">
+                    <h2 class="movie_title">Film premieres</h2>
+                </div>
+            </div>
+            <div class="item_container"></div>
+        </div>
+    </div>
+<div class="popup_bg">
+    <div class="popup">
+        <div class="close_container">
+            <i class="fa fa-window-close-o"></i>
+        </div>
+        <div class="popup_container">
+            <h3 class="popup_title">Movie</h3>
+            <div class="popup_info">
+                <p class="popup_text">Overview</p>
+                <img class="popup_img" src="">
             </div>
         </div>
-        <div class="item_container"></div>
     </div>
 </div>
-<div class="movie_container premiere">
-    <div class="container">
-        <div class="movie_block">
-            <div class="movie_info">
-                <h2 class="movie_title">Film premieres</h2>
-            </div>
-        </div>
-        <div class="item_container"></div>
-    </div>
-</div>
-
-<div class="popup">
-    <div class="close_container">
-        <i class="fa fa-window-close-o"></i>
-    </div>
-    <div class="popup_info">
-        <h3 class="popup_title">Movie</h3>
-        <p class="popup_text">Overview</p>
-        <img class="popup_img" src="">
-    </div>
-</div>
-<script src="build/js/main.min.js"></script>
+    
+    <script src="build/js/main.min.js"></script>
 </body>
+
 </html>

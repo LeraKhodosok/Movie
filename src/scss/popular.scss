@@ -5,10 +5,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  @media (max-width: 576px) {
-    padding: 20px 0;
-  }
 }
 
 .movie_block {
@@ -19,17 +15,9 @@
 
   .movie_title {
     @include font_style(35px, #ffffff);
-
-    @media (max-width: 992px) {
-      @include font_style(30px, #ffffff);
-    }
     
     @media (max-width: 768px) {
       @include font_style(25px, #ffffff);
-    }
-
-    @media (max-width: 480px) {
-      @include font_style(20px, #ffffff);
     }
   }
 }
@@ -51,17 +39,9 @@
       min-width: 250px;
     }
 
-    @media (max-width: 992px) {
-      min-width: 200px;
-    }
-
     @media (max-width:768px) {
       min-width: 160px;
       margin-right: 10px;
-    }
-
-    @media (max-width: 576px) {
-      min-width: 150px;
     }
   }
 
@@ -83,18 +63,8 @@
       padding-top: 20px;
     }
 
-    @media (max-width: 992px) {
-      height: 130px;
-    }
-
     @media (max-width: 576px) {
       height: 110px;
-    }
-
-    @media (max-width: 480px) {
-      height: 90px;
-      padding-bottom: 10px;
-      padding-top: 10px;
     }
   }
 
@@ -105,10 +75,6 @@
 
     @media (max-width: 1200px) {
       @include font_style(23px, #ffffff);
-    }
-
-    @media (max-width: 992px) {
-      @include font_style(20px, #ffffff);
     }
 
     @media (max-width: 768px) {
@@ -134,10 +100,6 @@
       @include font_text(20px, #808080);
     }
 
-    @media (max-width: 992px) {
-      @include font_text(18px, #808080);
-    }
-
     @media (max-width: 768px) {
       @include font_text(14px, #808080);
       width: 70px;
@@ -154,25 +116,20 @@
   align-items: center;
 
   overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    background: none;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgb(110, 102, 102);
+    border-radius: 10px;
+  }
 }
 
-.picture {
-  width: 100%;
-}
 
 .movie_img {
+  object-fit: cover;
   width: 100%;
-  height: 400px;
-
-  @media (max-width: 1200px) {
-    height: 300px;
-  }
-
-  @media (max-width: 992px) {
-    height: 250px;
-  }
-
-  @media (max-width: 768px) {
-    height: 220px;
-  }
+  height: 100%;
 }
