@@ -1004,11 +1004,11 @@ header {
 .close_container {
   display: flex;
   justify-content: flex-end;
-  margin: 20px 30px;
+  padding: 20px 30px;
 }
 @media (max-width: 768px) {
   .close_container {
-    margin: 15px 0;
+    padding: 15px 0;
   }
 }
 
