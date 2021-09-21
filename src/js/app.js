@@ -5,7 +5,6 @@ const movieAPI = new MovieAPI();
 const popularContainer = document.querySelector('.popular .item_container');
 const premiereContainer = document.querySelector('.premiere .item_container');
 
-const main = document.querySelector('.main');
 const mainTitle = document.querySelector('.main .main_title');
 const mainText = document.querySelector('.main .main_text');
 
@@ -22,10 +21,6 @@ const baseImgPath = 'https://image.tmdb.org/t/p/original';
 function newMovie(title, overview) {
     mainTitle.innerText = title;
     mainText.innerText = overview;
-}
-
-function defImg() {
-    main.style.backgroundImage = `url(./src/img/afisha.jpg)`;
 }
 
 function addItems(name, img, container, id) {
@@ -106,14 +101,20 @@ close.addEventListener('click', () => {
     popup.classList.remove('active');
 })
 
+const popupPr = document.querySelector('.popup_preloader');
+const hide = document.querySelector('.popup');
+
 moviesContainers.forEach((item) => {
     item.addEventListener('click', (e) => {
         if (checkParent(e.target, '.film-slide') && e.target.classList.contains('more')) {
             let idToShow = e.target.parentElement.parentElement.id;
             popup.classList.add('active');
+            popupPr.classList.add('active');
             movieAPI.getMovieInfo(idToShow)
               .then((res) => {
                   popupBlocks(res.original_title, res.overview, res.poster_path, res.id);
+                  popupPr.classList.remove('active');
+                  hide.classList.add('active');
               })
               .catch((err) => {
                   console.log(err);

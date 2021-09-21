@@ -1,8 +1,8 @@
 .main {
-  background-size: cover;
   height: 100%;
   padding-bottom: 150px;
-  background: linear-gradient(0deg, #000000 4.66%, rgba(0, 0, 0, 0) 76.78%), url(../img/afisha.jpg);
+  background: linear-gradient(0deg, #000000 4.66%, rgba(0, 0, 0, 0) 76.78%), url(../img/afisha.png) no-repeat;
+  -webkit-background-size: cover;
 
   .btns_container {
     display: flex;
